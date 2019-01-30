@@ -13,14 +13,15 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1>Agregar una tarea</h1>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" v-model="newKeep" v-on:keyup.enter="addkeep">
                 </div>
 
                 <div class="col-sm-6">
                     <h1>Lista de tareas</h1>
                     <ul class="list-group">
-                        <li class="list-group-item">Elemento uno</li>
-                        <li class="list-group-item">Elemento dos</li>
+                        <li class="list-group-item" v-for="item in lists" v-bind:class="item.completed == true ? 'disabled active'  : '' ">
+                            {{ item.keep }}
+                         </li>
                     </ul>
                 </div>
             </div>
@@ -29,7 +30,7 @@
                     <div class="col-sm-12">
                         <hr>
                         <pre>
-                            datos del objeto                    
+                            {{ lists }}          
                         </pre>
                     </div>
             </div>
