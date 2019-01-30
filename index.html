@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+    
     <title>Workshop VueJS</title>
 </head>
 <body>
@@ -19,7 +22,7 @@
                 <div class="col-sm-6">
                     <h1>Lista de tareas</h1>
                     <ul class="list-group">
-                        <li class="list-group-item" v-for="item in lists" v-bind:class="item.completed == true ? 'disabled active'  : '' ">
+                        <li class="list-group-item" v-for="item in lists" v-bind:class="item.completed == true ? 'disabled' : ''" @click="item.completed = !item.completed">
                             {{ item.keep }}
                          </li>
                     </ul>
